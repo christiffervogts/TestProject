@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'Main.Main'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Add your LWJGL or other deps here later
+}
