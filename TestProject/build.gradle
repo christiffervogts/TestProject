@@ -4,13 +4,26 @@ plugins {
 }
 
 application {
-    mainClass = 'Main.Main'
+    mainClass = 'main.Main'
 }
-
+ext {
+    lwjglVersion = "3.3.3"   // or latest
+    lwjglNatives = "natives-windows" // or natives-linux / natives-macos
+}
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // Add your LWJGL or other deps here later
+    implementation "org.lwjgl:lwjgl:${lwjglVersion}"
+    runtimeOnly "org.lwjgl:lwjgl:${lwjglVersion}:${lwjglNatives}"
+
+    implementation "org.lwjgl:lwjgl-glfw:${lwjglVersion}"
+    runtimeOnly "org.lwjgl:lwjgl-glfw:${lwjglVersion}:${lwjglNatives}"
+
+    implementation "org.lwjgl:lwjgl-opengl:${lwjglVersion}"
+    runtimeOnly "org.lwjgl:lwjgl-opengl:${lwjglVersion}:${lwjglNatives}"
+
+    implementation "org.lwjgl:lwjgl-stb:${lwjglVersion}"
+    runtimeOnly "org.lwjgl:lwjgl-stb:${lwjglVersion}:${lwjglNatives}"
 }
