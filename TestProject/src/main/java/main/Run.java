@@ -16,7 +16,8 @@ public class Run {
 
 	private long window;
 
-	
+	int count = 99;
+	float rand1, rand2, rand3, rand4;
 	public Run(){
 		init();
 		loop();
@@ -75,10 +76,15 @@ public class Run {
 		GL.createCapabilities();
 
 		while (!glfwWindowShouldClose(window)) {
-			float rand1 = (float) Math.random();
-			float rand2 = (float) Math.random();
-			float rand3 = (float) Math.random();
-			float rand4 = (float) Math.random();
+			count++;
+			if(count == 100) {
+			rand1 = (float) Math.random();
+			rand2 = (float) Math.random();
+			rand3 = (float) Math.random();
+			rand4 = (float) Math.random();
+			count = 0;
+			}
+			
 			glClearColor(rand1, rand2, rand3, rand4);
 		    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
